@@ -3,56 +3,48 @@
 @section('navbar-admin')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            {{-- <a class="btn btn-primary mb-3" href="">Tambah Data</a> --}}
+            <a class="btn btn-primary mb-3" href="{{ url('dashboard-article/create') }}">Tambah Data</a>
             @include('layouts.message')
             <!-- Responsive Table -->
-            <div class="card">
-                <h5 class="card-header">Artikel</h5>
-                <div class="table-responsive text-nowrap">
-                    {{-- <table class="table table-bordered">
-                        <thead>
-                            <tr class="text-nowrap text-center">
-                                <th>No</th>
-                                <th>Gambar</th>
-                                <th>Header</th>
-                                <th>Judul Artikel</th>
-                                <th>Isi Artikel</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = $data->firstItem(); ?>
-                            @foreach ($data as $item)
-                                <tr class="text-center">
-                                    <th scope="row">{{ $i }}</th>
-                                    <th scope="row">
-                                        <img src="{{ asset('storage/images/' . $item->image) }}" class="rounded"
-                                            style="width: 150px">
-                                    </th>
-                                    <th scope="row">{{ $item->header }}</th>
-                                    <th scope="row">{{ $item->judul_artikel }}</th>
-                                    <th scope="row">{!! $item->isi_artikel !!}</th>
-                                    <th scope="row"
-                                        class=" text-center badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }} m-2">
-                                        {{ $item->status_publish }}
-                                    </th>
-                                    <td scope="row">
-                                        <a href="{{ url('dashboard-article/' . $item->id) . '/edit' }}"
-                                            class="btn btn-warning mb-2"><i class=" fa fa-solid fa-pen-to-square"
-                                                style="color:white;"></i></a>
-                                        <form action="{{ url('dashboard-article/' . $item->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger mb-2"><i
-                                                    class="fa fa-solid fa-trash"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php $i++; ?>
-                        </tbody>
-                        @endforeach
-                    </table> --}}
+            <div class="row mb-5">
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <div class="card-body">
+                            <h5 class="card-title">Catalogue</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
+                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <div class="card-body">
+                            <h5 class="card-title">Order</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
+                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <div class="card-body">
+                            <h5 class="card-title">Report</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
+                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--/ Responsive Table -->

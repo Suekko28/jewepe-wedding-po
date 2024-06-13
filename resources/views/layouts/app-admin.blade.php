@@ -117,7 +117,25 @@
                     <li class="menu-item active">
                         <a href="{{route('dashboard')}}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Manajemen Artikel</div>
+                            <div data-i18n="Analytics">Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="{{route('dashboard')}}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Catalogues</div>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="{{route('dashboard')}}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Order</div>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="{{route('dashboard')}}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Report</div>
                         </a>
                     </li>
                 </ul>
