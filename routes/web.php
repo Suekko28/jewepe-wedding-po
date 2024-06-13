@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CataloguesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/dashboard', DashboardController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/catalogues', CataloguesController::class);
+    Route::get('/catalogues', [CataloguesController::class, 'index'])->name('catalogues');
 });
 

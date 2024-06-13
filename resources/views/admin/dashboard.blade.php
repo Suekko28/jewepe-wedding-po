@@ -3,7 +3,7 @@
 @section('navbar-admin')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary mb-3" href="{{ url('dashboard-article/create') }}">Tambah Data</a>
+            {{-- <a class="btn btn-primary mb-3" href="{{ url('dashboard-article/create') }}">Tambah Data</a> --}}
             @include('layouts.message')
             <!-- Responsive Table -->
             <div class="row mb-5">
