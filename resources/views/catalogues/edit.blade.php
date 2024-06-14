@@ -39,36 +39,45 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('catalogues') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('catalogues', $data->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="card-body container">
                         <div class="form-group mb-3">
-                            <label for="image">Image</label>
-                            <input type="file" class="form-control" id="image" name="image" placeholder="">
+                            <label for="image">Gambar</label>
+                            <input type="file" class="form-control" id="image" name="image"
+                                accept=".jpg, .jpeg, .png">
+                            <div class="mt-3">
+                                <h6>Gambar Sebelumnya :</h6>
+                                <img src="{{ asset('storage/images/' . $data->image) }}" class="rounded"
+                                    style="width: 150px">
+                            </div>
                         </div>
+
                         <div class="form-group mb-3">
-                            <label for="package_name">Package Name</label>
+                            <label for="package_name">Nama Paket</label>
                             <input type="text" class="form-control" id="package_name" name="package_name"
-                                placeholder="Package Name">
+                                placeholder="Package Name" value="{{ $data->package_name }}">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="description">Description</label>
-                            <textarea rows="20" class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                            <label for="description">Deskripsi</label>
+                            <textarea rows="20" class="form-control" id="description" name="description" placeholder="Description">{{ $data->description }}</textarea>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="price">Price</label>
-                            <input type="number" class="form-control" id="price" name="price"
-                                placeholder="Price">
+                            <label for="price">Harga (Rp)</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Price"
+                                value="{{ $data->price }}">
                         </div>
                         <div class="form-group mb-3">
                             <label for="status">Status</label>
                             <br>
-                            <input type="radio" id="status_publish" name="status_publish" value="publish">
-                            <label for="status_publish  ">Publish</label><br>
-                            <input type="radio" id="draft" name="status_publish" value="draft">
-                            <label for="draft">Draft</label><br>
+                            <select name="status_publish" id="status_publish" class="form-select">
+                                <option value="default">...</option>
+                                <option value="publish" @if ($data->status_publish == 'publish') selected @endif>Publish</option>
+                                <option value="draft" @if ($data->status_publish == 'draft') selected @endif>Draft</option>
+                            </select>
                         </div>
-                     
+
                         <div class="d-flex flex-row-reverse">
                             <button type="submit" class="btn btn-primary ml-3 ms-3">Simpan</button>
                             <a href="{{ route('catalogues') }}" class="btn btn-danger">Batal</a>

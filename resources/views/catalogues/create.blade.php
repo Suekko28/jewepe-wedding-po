@@ -43,30 +43,32 @@
                     @csrf
                     <div class="card-body container">
                         <div class="form-group mb-3">
-                            <label for="image">Image</label>
-                            <input type="file" class="form-control" id="image" name="image" placeholder="">
+                            <label for="image">Gambar</label>
+                            <input type="file" class="form-control" id="image" name="image" accept=".jpg, .jpeg, .png">
                         </div>
+                        
                         <div class="form-group mb-3">
-                            <label for="package_name">Package Name</label>
+                            <label for="package_name">Nama Paket</label>
                             <input type="text" class="form-control" id="package_name" name="package_name"
                                 placeholder="Package Name">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="description">Description</label>
+                            <label for="description">Deskripsi</label>
                             <textarea rows="20" class="form-control" id="description" name="description" placeholder="Description"></textarea>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="price">Price</label>
+                            <label for="price">Harga (Rp)</label>
                             <input type="number" class="form-control" id="price" name="price"
                                 placeholder="Price">
                         </div>
                         <div class="form-group mb-3">
                             <label for="status">Status</label>
                             <br>
-                            <input type="radio" id="status_publish" name="status_publish" value="publish">
-                            <label for="status_publish">Publish</label><br>
-                            <input type="radio" id="draft" name="status_publish" value="draft">
-                            <label for="draft">Draft</label><br>
+                            <select class="form-select" name="status_publish" id="status_publish">
+                                <option value="default">...</option>
+                                <option value="publish">Publish</option>
+                                <option value="draft">Draft</option>
+                              </select>
                         </div>
                      
                         <div class="d-flex flex-row-reverse">
@@ -104,4 +106,6 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
 @endsection

@@ -25,23 +25,23 @@
                             <?php $i = $data->firstItem(); ?>
                             @foreach ($data as $item)
                                 <tr class="text-center">
-                                    <th scope="row">{{ $i }}</th>
-                                    <th scope="row">
+                                    <td scope="row">{{ $i }}</td>
+                                    <td scope="row">
                                         <img src="{{ asset('storage/images/' . $item->image) }}" class="rounded"
                                             style="width: 150px">
-                                    </th>
-                                    <th scope="row">{{ $item->package_name }}</th>
-                                    <th scope="row">{!! $item->description !!}</th>
-                                    <th scope="row">{{ $item->price }}</th>
-                                    <th scope="row"
-                                        class=" text-center badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }} m-2">
+                                    </td>
+                                    <td scope="row">{{ $item->package_name}}</td>
+                                    <td scope="row">{!! $item->description !!}</td>
+                                    <td scope="row">Rp {{ number_format($item->price, 2, ',', '.') }}</td>
+                                    <td scope="row"
+                                        class="mx-auto mt-5 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
                                         {{ $item->status_publish }}
-                                    </th>
+                                    </td>
                                     <td scope="row">
-                                        <a href="{{ url('dashboard-article/' . $item->id) . '/edit' }}"
+                                        <a href="{{ url('catalogues/' . $item->id) . '/edit' }}"
                                             class="btn btn-warning mb-2"><i class=" fa fa-solid fa-pen-to-square"
                                                 style="color:white;"></i></a>
-                                        <form action="{{ url('dashboard-article/' . $item->id) }}" method="POST">
+                                        <form action="{{ url('catalogues/' . $item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger mb-2"><i

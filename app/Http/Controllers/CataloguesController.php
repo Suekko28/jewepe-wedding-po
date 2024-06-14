@@ -14,7 +14,8 @@ class CataloguesController extends Controller
      */
     public function index()
     {
-        return view('catalogues.index');
+        $data = tb_catalogues::orderBy('id', 'desc')->paginate(10);
+        return view('catalogues.index', compact('data'));
     }
 
     /**
@@ -69,7 +70,7 @@ class CataloguesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CataloguesFormRequest $request, string $id)
     {
         $data = tb_catalogues::find($id);
 
@@ -112,6 +113,6 @@ class CataloguesController extends Controller
     public function destroy(string $id)
     {
         $data = tb_catalogues::find($id)->delete();
-        return view()->route('catalogues')->with('error', 'Data berhasil dihapus');
+        return redirect()->route('catalogues')->with('delete', 'Data berhasil dihapus');
     }
 }
