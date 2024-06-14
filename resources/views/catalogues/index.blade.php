@@ -24,17 +24,17 @@
                         <tbody>
                             <?php $i = $data->firstItem(); ?>
                             @foreach ($data as $item)
-                                <tr class="">
+                                <tr class="text-center">
                                     <td scope="row">{{ $i }}</td>
                                     <td scope="row">
                                         <img src="{{ asset('storage/images/' . $item->image) }}" class="rounded"
                                             style="width: 150px">
                                     </td>
                                     <td scope="row">{{ $item->package_name}}</td>
-                                    <td scope="row">{!! $item->description !!}</td>
+                                    <td scope="row" class="text-start">{!! Str::limit($item->description, 1000) !!}</td>
                                     <td scope="row">Rp {{ number_format($item->price, 2, ',', '.') }}</td>
                                     <td scope="row"
-                                        class="mx-auto mt-5 p-3 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
+                                        class=" m-5 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
                                         {{ $item->status_publish }}
                                     </td>
                                     <td scope="row">
