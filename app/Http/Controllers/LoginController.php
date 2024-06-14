@@ -78,6 +78,6 @@ class LoginController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('login.form')->with('success', $user->name . ' berhasil login');
+        return redirect()->route('login.form')->with('success', $user->name . ' berhasil register');
     }
 }

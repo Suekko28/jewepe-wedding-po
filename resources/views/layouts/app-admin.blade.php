@@ -57,7 +57,7 @@
             <!-- Menu -->
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                <img src="../assets/admin/assets/img/backgrounds/love.jpg" alt="..." width="80" class="mx-auto">
+                <img src="{{asset('assets/admin/assets/img/backgrounds/love.jpg') }}" alt="..." width="80" class="mx-auto">
 
                 <div class="menu-inner-shadow"></div>
 
