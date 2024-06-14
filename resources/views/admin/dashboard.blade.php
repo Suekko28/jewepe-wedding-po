@@ -9,40 +9,40 @@
             <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card h-100">
-                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <img class="card-img-top" src="/assets/admin/assets/img/elements/catalogues.png" alt="Card image cap" />
                         <div class="card-body">
                             <h5 class="card-title">Catalogue</h5>
                             <p class="card-text">
                                 Some quick example text to build on the card title and make up the bulk of the card's
                                 content.
                             </p>
-                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                            <a href="{{route('catalogues')}}" class="btn btn-primary">View List</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card h-100">
-                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <img class="card-img-top" src="/assets/admin/assets/img/elements/catalogues.png" alt="Card image cap" />
                         <div class="card-body">
                             <h5 class="card-title">Order</h5>
                             <p class="card-text">
                                 Some quick example text to build on the card title and make up the bulk of the card's
                                 content.
                             </p>
-                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                            <a href="{{route('catalogues')}}" class="btn btn-primary">View List</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card h-100">
-                        <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                        <img class="card-img-top" src="/assets/admin/assets/img/elements/catalogues.png" alt="Card image cap" />
                         <div class="card-body">
                             <h5 class="card-title">Report</h5>
                             <p class="card-text">
                                 Some quick example text to build on the card title and make up the bulk of the card's
                                 content.
                             </p>
-                            <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                            <a href="{{route('catalogues')}}" class="btn btn-primary">View List</a>
                         </div>
                     </div>
                 </div>

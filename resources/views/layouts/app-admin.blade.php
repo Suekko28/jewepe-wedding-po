@@ -114,31 +114,32 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item active">
-                        <a href="{{route('dashboard')}}" class="menu-link">
+                    <li class="menu-item {{ Request::routeIs('dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
-                    <li class="menu-item ">
-                        <a href="{{route('dashboard')}}" class="menu-link">
+                    <li class="menu-item {{ Request::routeIs('catalogues') ? 'active' : '' }}">
+                        <a href="{{ route('catalogues') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Catalogues</div>
                         </a>
                     </li>
-                    <li class="menu-item ">
-                        <a href="{{route('dashboard')}}" class="menu-link">
+                    <li class="menu-item {{ Request::routeIs('order') ? 'active' : '' }}">
+                        <a href="" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Order</div>
                         </a>
                     </li>
-                    <li class="menu-item ">
-                        <a href="{{route('dashboard')}}" class="menu-link">
+                    <li class="menu-item {{ Request::routeIs('report') ? 'active' : '' }}">
+                        <a href="" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Report</div>
                         </a>
                     </li>
                 </ul>
+                
             </aside>
             <!-- / Menu -->
 

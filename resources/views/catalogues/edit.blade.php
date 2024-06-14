@@ -39,7 +39,7 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ url('catalogues', $data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('catalogues-list', $data->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body container">

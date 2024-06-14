@@ -3,7 +3,7 @@
 @section('navbar-admin')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary mb-3" href="{{ url('catalogues/create') }}">Tambah Data</a>
+            <a class="btn btn-primary mb-3" href="{{ url('catalogues-list/create') }}">Tambah Data</a>
             @include('layouts.message')
             <!-- Responsive Table -->
             <div class="card">
@@ -24,7 +24,7 @@
                         <tbody>
                             <?php $i = $data->firstItem(); ?>
                             @foreach ($data as $item)
-                                <tr class="text-center">
+                                <tr class="">
                                     <td scope="row">{{ $i }}</td>
                                     <td scope="row">
                                         <img src="{{ asset('storage/images/' . $item->image) }}" class="rounded"
@@ -34,14 +34,14 @@
                                     <td scope="row">{!! $item->description !!}</td>
                                     <td scope="row">Rp {{ number_format($item->price, 2, ',', '.') }}</td>
                                     <td scope="row"
-                                        class="mx-auto mt-5 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
+                                        class="mx-auto mt-5 p-3 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
                                         {{ $item->status_publish }}
                                     </td>
                                     <td scope="row">
-                                        <a href="{{ url('catalogues/' . $item->id) . '/edit' }}"
+                                        <a href="{{ url('catalogues-list/' . $item->id) . '/edit' }}"
                                             class="btn btn-warning mb-2"><i class=" fa fa-solid fa-pen-to-square"
                                                 style="color:white;"></i></a>
-                                        <form action="{{ url('catalogues/' . $item->id) }}" method="POST">
+                                        <form action="{{ url('catalogues-list/' . $item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger mb-2"><i
