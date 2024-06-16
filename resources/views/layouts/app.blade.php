@@ -51,7 +51,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="/" class="nav-item nav-link">Beranda</a>
+                        <a href="{{route('beranda')}}" class="nav-item nav-link">Beranda</a>
                         <a href="{{ route('kontak') }}" class="nav-item nav-link">Kontak Kami</a>
                         <a href="{{ route('login.form') }}" class="nav-item nav-link">Login</a>              
                     </div>

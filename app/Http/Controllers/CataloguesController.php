@@ -36,7 +36,9 @@ class CataloguesController extends Controller
 
         $data = $request->all();
 
+        $userId = auth()->user()->id;
         tb_catalogues::create([
+            'user_id' => $userId,
             'image' => $image->hashName(),
             'package_name' => $data['package_name'],
             'description' => $data['description'],

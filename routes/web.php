@@ -26,10 +26,11 @@ Route::get('/', function () {
 });
 
 Route::resource('/', HomeController::class);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/beranda', [HomeController::class, 'index'])->name('beranda');
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('/catalogues', [HomeController::class, 'view'])->name('katalog.view');
-Route::get('/catalogues/{id}/show', [HomeController::class, 'show'])->name('katalog.show');
+Route::post('/catalogues/{id}/order', [HomeController::class, 'store'])->name('katalog.order');
+// Route::post('/catalogues/{id}/show', [HomeController::class, 'store'])->name('katalog.order');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -47,5 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/catalogues-list', CataloguesController::class);
     Route::get('/catalogues-list', [CataloguesController::class, 'index'])->name('catalogues');
+    Route::get('/home', function () {
+        return redirect()->route('dashboard');
+    });
 });
 

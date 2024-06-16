@@ -2,27 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\OrderFormRequest;
-use App\Models\tb_catalogues;
-use App\Models\tb_order;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class ViewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = tb_catalogues::where('status_publish', 'publish')->orderBy('id', 'desc')->paginate(4);
-        return view('user.home', compact('data'));
-    }
-
-    public function kontak()
-    {
-        return view('user.kontak');
+        //
     }
 
     /**
@@ -30,33 +19,24 @@ class HomeController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(OrderFormRequest $request, $id)
+    public function store(Request $request)
     {
-        // Buat pesanan baru
+        //
     }
+
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        $data = tb_catalogues::findOrFail($id);
-        return view('user.detail', compact('data'));
+        //
     }
-
-    public function view()
-    {
-        $data = tb_catalogues::where('status_publish', 'publish')
-            ->orderBy('id', 'desc')
-            ->get();
-        return view('user.view', compact('data'));
-    }
-
 
     /**
      * Show the form for editing the specified resource.

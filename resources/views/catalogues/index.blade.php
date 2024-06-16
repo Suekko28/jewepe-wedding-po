@@ -14,9 +14,9 @@
                             <tr class="text-nowrap text-center">
                                 <th>No</th>
                                 <th>Gambar</th>
-                                <th>Package Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th>Nama Paket</th>
+                                <th>Deskripsi</th>
+                                <th>Harga</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
