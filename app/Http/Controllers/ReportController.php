@@ -21,7 +21,7 @@ class ReportController extends Controller
             ])
             ->groupBy('catalogue_id')
             ->orderBy('catalogue_id')
-            ->get();
+            ->paginate(10);
 
         return view('report.index', compact('data'));
     }

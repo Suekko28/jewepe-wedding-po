@@ -30,7 +30,7 @@
                                         <img src="{{ asset('storage/images/' . $item->image) }}" class="rounded"
                                             style="width: 150px">
                                     </td>
-                                    <td scope="row">{{ $item->package_name}}</td>
+                                    <td scope="row">{{ $item->package_name }}</td>
                                     <td scope="row" class="text-start">{!! Str::limit($item->description, 1000) !!}</td>
                                     <td scope="row">Rp {{ number_format($item->price, 2, ',', '.') }}</td>
                                     <td scope="row"
@@ -54,6 +54,8 @@
                         @endforeach
                     </table>
                 </div>
+                <div class="p-2">{{ $data->links() }}</div>
+
             </div>
             <!--/ Responsive Table -->
         </div>

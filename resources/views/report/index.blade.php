@@ -16,6 +16,7 @@
                                 <th>Nama Paket</th>
                                 <th>Harga</th>
                                 <th>Jumlah Pesanan</th>
+                                <th>Total Harga</th>
                                 <th>Status Publish</th>
                                 {{-- <th>Aksi</th> --}}
                             </tr>
@@ -32,6 +33,7 @@
                                     <td scope="row">{{ $item->catalogue->package_name }}</td>
                                     <td scope="row">Rp {{ number_format($item->catalogue->price, 2, ',', '.') }}</td>
                                     <td scope="row">{{ $item->total_orders }}</td>
+                                    <td scope="row">Rp {{ number_format($item->catalogue->price * $item->total_orders, 2, ',', '.') }}</td>
                                     <td scope="row"
                                         class=" m-5 badge {{ $item->catalogue->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
                                         {{ $item->catalogue->status_publish === 'publish' ? 'Y' : 'N' }}
@@ -43,6 +45,8 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="p-2">{{ $data->links() }}</div>
+
             </div>
             <!--/ Responsive Table -->
         </div>

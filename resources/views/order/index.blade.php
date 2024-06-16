@@ -79,6 +79,7 @@
                         @endforeach
                     </table>
                 </div>
+                <div class="p-2">{{ $data->links() }}</div>
             </div>
             <!--/ Responsive Table -->
         </div>
