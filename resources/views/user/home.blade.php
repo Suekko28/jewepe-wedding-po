@@ -57,8 +57,8 @@
                 <h1 class="display-6">Choose your wedding catalogue!</h1>
             </div>
             <div class="row g-4">
+                @foreach ($data as $item)
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    @foreach ($data as $item)
                     <div class="store-item position-relative text-center">
                         <img class="img-fluid" src="{{Storage::url('public/images/' .$item->image)}}" alt="">
                         <div class="p-4">
@@ -71,8 +71,8 @@
                                     class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
                 
                 
                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">

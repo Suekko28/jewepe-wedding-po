@@ -10,8 +10,8 @@
                 <h1 class="display-6">Choose your wedding catalogue!</h1>
             </div>
             <div class="row g-4">
+                @foreach ($data as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    @foreach ($data as $item)
                     <div class="store-item position-relative text-center">
                         <img class="img-fluid" src="{{Storage::url('public/images/' .$item->image)}}" alt="">
                         <div class="p-4">
@@ -23,7 +23,7 @@
                                 <small class="fa fa-star text-primary"></small>
                             </div>
                             <h4 class="mb-3">{{$item->package_name}}</h4>
-                            <p>{!! $item->description !!}</p>
+                            <p>{!! Str::limit($item->description, 200) !!}</p>
                             <h4 class="text-primary">Rp {{number_format($item->price, 2, ',', '.')}}</h4>
                         </div>
                         <div class="store-overlay">
@@ -31,8 +31,8 @@
                         </div>
                     </div>
                         
-                    @endforeach
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

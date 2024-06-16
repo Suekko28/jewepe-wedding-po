@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = tb_catalogues::where('status_publish','publish')->orderBy('id', 'desc')->paginate(4);
+        $data = tb_catalogues::where('status_publish', 'publish')->orderBy('id', 'desc')->paginate(4);
         return view('user.home', compact('data'));
     }
 
@@ -46,11 +46,14 @@ class HomeController extends Controller
         return view('user.detail', compact('data'));
     }
 
-    public function view() 
+    public function view()
     {
-        $data = tb_catalogues::all();
+        $data = tb_catalogues::where('status_publish', 'publish')
+            ->orderBy('id', 'desc')
+            ->get();
         return view('user.view', compact('data'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
