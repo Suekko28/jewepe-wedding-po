@@ -4,21 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('tb_catalogues', function (Blueprint $table) {
+        Schema::create('tb_orders', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('package_name');
-            $table->text('description');
-            $table->integer('price');
+            $table->string('name');
+            $table->integer('catalogue_id');
+            $table->string('email');
+            $table->integer('phone_number');
             $table->integer('user_id');
-            $table->enum('status_publish', ['publish', 'draft']);
+            $table->date('wedding_date');
+            $table->enum('status', ['requested', 'approved']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_catalogues');
+        Schema::dropIfExists('tb_orders');
     }
 };
