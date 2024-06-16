@@ -34,7 +34,7 @@
                                     <td scope="row">{{ $item->total_orders }}</td>
                                     <td scope="row"
                                         class=" m-5 badge {{ $item->catalogue->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">
-                                        {{ $item->catalogue->status_publish === 'publish' ? 'Y' : '' }}
+                                        {{ $item->catalogue->status_publish === 'publish' ? 'Y' : 'N' }}
                                     </td>
 
                                 </tr>
