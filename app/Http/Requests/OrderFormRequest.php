@@ -23,12 +23,9 @@ class OrderFormRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'catalogue_id' => 'required|integer|exists:catalogues,id',
             'email' => 'required|email|max:255',
             'phone_number' => 'required|numeric|digits_between:10,15',
-            'user_id' => 'required|integer|exists:users,id',
             'wedding_date' => 'required|date|after:today',
-            'status' => 'required|in:requested,approved',
         ];
     }
 
@@ -48,8 +45,6 @@ class OrderFormRequest extends FormRequest
         'wedding_date.required' => 'Tanggal pernikahan wajib diisi.',
         'wedding_date.after' => 'Tanggal pernikahan harus setelah hari ini.',
 
-        'status.required' => 'Status wajib diisi.',
-        'status.in' => 'Status harus salah satu dari: requested atau approved.',
     ];
 }
 

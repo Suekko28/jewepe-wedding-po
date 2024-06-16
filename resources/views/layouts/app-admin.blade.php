@@ -72,19 +72,19 @@
                     <li class="menu-item {{ Request::routeIs('catalogues') ? 'active' : '' }}">
                         <a href="{{ route('catalogues') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Catalogues</div>
+                            <div data-i18n="Analytics">Manajemen Katalog</div>
                         </a>
                     </li>
                     <li class="menu-item {{ Request::routeIs('order') ? 'active' : '' }}">
-                        <a href="" class="menu-link">
+                        <a href="{{ route('order') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Order</div>
+                            <div data-i18n="Analytics">Manajemen Pesanan</div>
                         </a>
                     </li>
                     <li class="menu-item {{ Request::routeIs('report') ? 'active' : '' }}">
-                        <a href="" class="menu-link">
+                        <a href="{{ route('report') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Report</div>
+                            <div data-i18n="Analytics">Laporan</div>
                         </a>
                     </li>
                 </ul>

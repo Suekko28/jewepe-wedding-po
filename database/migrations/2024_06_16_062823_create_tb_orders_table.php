@@ -13,12 +13,14 @@ return new class extends Migration {
         Schema::create('tb_orders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('user_id');
             $table->integer('catalogue_id');
             $table->string('email');
             $table->string('phone_number');
             $table->date('wedding_date');
-            $table->string('status');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->references('id');
+            $table->enum('status', ['requested', 'approved'])->default('requested');
+            // $table->foreignId('user_id')->on('users')->onDelete('cascade')->references('id');
+            // $table->foreignId('catalogues_id')->on('tb_catalogues')->onDelete('cascade')->references('id');
             $table->timestamps();
         });
     }

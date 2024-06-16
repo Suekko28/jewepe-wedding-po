@@ -34,10 +34,9 @@
                 <div class="col-lg-7 ms-auto wow fadeInUp" data-wow-delay="0.1s">
                     <h4 class="mb-4"> Tertarik Paket ini? Yuk langsung pesan</h4>
 
-                    <form action="{{ route('katalog.order', ['id' => $data->id]) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('katalog.order', $data->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="catalogue_id" value="{{ $data->id }}">
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -47,7 +46,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Alamat email" required>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email" required>
                                     <label for="email">Alamat Email</label>
                                 </div>
                             </div>
@@ -66,6 +65,8 @@
                             <button type="submit" class="btn btn-primary rounded-pill py-3 px-5">Pesan Paket</button>
                         </div>
                     </form>
+                    
+                    
                     
                     
                     

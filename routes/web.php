@@ -4,6 +4,8 @@ use App\Http\Controllers\CataloguesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +31,8 @@ Route::resource('/', HomeController::class);
 Route::get('/beranda', [HomeController::class, 'index'])->name('beranda');
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('/catalogues', [HomeController::class, 'view'])->name('katalog.view');
-Route::post('/catalogues/{id}/order', [HomeController::class, 'store'])->name('katalog.order');
-// Route::post('/catalogues/{id}/show', [HomeController::class, 'store'])->name('katalog.order');
-// Route::get('/', function () {
+Route::get('/catalogues/{id}/show', [HomeController::class, 'show'])->name('katalog.show');
+Route::post('/catalogues/{id}/order', [HomeController::class, 'store'])->name('katalog.order');// Route::get('/', function () {
 //     return view('welcome');
 // });
 
@@ -46,8 +47,18 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/dashboard', DashboardController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::resource('/catalogues-list', CataloguesController::class);
     Route::get('/catalogues-list', [CataloguesController::class, 'index'])->name('catalogues');
+
+    Route::resource('/order-list', OrderController::class);
+    Route::get('/order-list', [OrderController::class, 'index'])->name('order');
+    Route::put('/order-list/{id}', [OrderController::class, 'update'])->name('order.update');
+    Route::delete('/order-list/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
+
+    Route::resource('/report', ReportController::class);
+    Route::get('/report', [ReportController::class, 'index'])->name('report');
+
     Route::get('/home', function () {
         return redirect()->route('dashboard');
     });

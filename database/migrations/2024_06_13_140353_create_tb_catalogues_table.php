@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('package_name');
             $table->text('description');
             $table->integer('price');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->references('id');
+            $table->foreignId('user_id')->on('users')->constrained()->onDelete('cascade')->references('id');
             $table->enum('status_publish', ['publish', 'draft']);
             $table->timestamps();
         });

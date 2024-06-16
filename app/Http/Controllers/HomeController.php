@@ -36,9 +36,36 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(OrderFormRequest $request, $id)
+    public function store(OrderFormRequest $request, $catalogueId)
     {
-        // Buat pesanan baru
+        $catalogue = tb_catalogues::findOrFail($catalogueId);
+        $validated = $request->validated();
+
+        // Cek apakah ada order dengan email dan wedding date yang sama pada id yang sama
+        $existingOrder = tb_order::where('email', $validated['email'])
+            ->where('wedding_date', $validated['wedding_date'])
+            ->where('id', '!=', $catalogueId) // Memastikan tidak termasuk order yang sedang aktif
+            ->first();
+
+        if ($existingOrder) {
+            return redirect()->back()->withErrors(['Maaf, Paket dan tanggal pernikahan sudah Anda pesan sebelumnya, silahkan tunggu konfirmasi dari kami.']);
+        }
+
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'],
+            'wedding_date' => $validated['wedding_date'],
+            'catalogue_id' => $catalogue->id,
+            'status' => 'requested', // Set the default status
+            'user_id' => Auth::id(), // Set the user ID of the logged-in user
+        ];
+
+        $order = new tb_order($data);
+
+        $catalogue->order()->save($order);
+
+        return redirect()->route('katalog.show', $catalogueId)->with('success', 'Berhasil Mempesan Paket Yang Dipilih');
     }
     /**
      * Display the specified resource.

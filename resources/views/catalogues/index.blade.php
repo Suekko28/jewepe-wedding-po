@@ -8,7 +8,7 @@
             <!-- Responsive Table -->
             <div class="card">
                 <h5 class="card-header">Catalogues List</h5>
-                <div class="table-responsive text-nowrap">
+                <div class="table-responsive text-nowrap p-4">
                     <table class="table table-bordered">
                         <thead>
                             <tr class="text-nowrap text-center">
