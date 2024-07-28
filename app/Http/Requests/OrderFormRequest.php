@@ -24,7 +24,7 @@ class OrderFormRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone_number' => 'required|numeric|digits_between:10,15',
+            'phone_number' => 'required|numeric',
             'wedding_date' => 'required|date|after:today',
         ];
     }

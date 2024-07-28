@@ -13,6 +13,7 @@
                             <tr class="text-nowrap text-center">
                                 <th>No</th>
                                 <th>Gambar</th>
+                                <th>Nama Pemesan</th>
                                 <th>Nama Paket</th>
                                 <th>Harga</th>
                                 <th>Email Pesanan</th>
@@ -29,6 +30,7 @@
                                         <img src="{{ asset('storage/images/' . $item->catalogue->image) }}" class="rounded"
                                             style="width: 150px">
                                     </td>
+                                    <td scope="row">{{ $item->name}}</td>
                                     <td scope="row">{{ $item->catalogue->package_name }}</td>
                                     <td scope="row">Rp {{ number_format($item->catalogue->price, 2, ',', '.') }}</td>
                                     <td scope="row">{{ $item->email }}</td>

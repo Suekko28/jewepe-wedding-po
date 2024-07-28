@@ -31,7 +31,7 @@
                                             style="width: 150px">
                                     </td>
                                     <td scope="row">{{ $item->package_name }}</td>
-                                    <td scope="row" class="text-start">{!! Str::limit($item->description, 1000) !!}</td>
+                                    <td scope="row" class="text-start">{!! Str::limit($item->description, 50) !!}</td>
                                     <td scope="row">Rp {{ number_format($item->price, 2, ',', '.') }}</td>
                                     <td scope="row"
                                         class=" m-5 badge {{ $item->status_publish === 'publish' ? 'bg-primary text-white' : 'bg-warning text-white' }}">

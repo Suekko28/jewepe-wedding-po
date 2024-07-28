@@ -32,7 +32,8 @@ Route::get('/beranda', [HomeController::class, 'index'])->name('beranda');
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('/catalogues', [HomeController::class, 'view'])->name('katalog.view');
 Route::get('/catalogues/{id}/show', [HomeController::class, 'show'])->name('katalog.show');
-Route::post('/catalogues/{id}/order', [HomeController::class, 'store'])->name('katalog.order');// Route::get('/', function () {
+Route::post('/catalogues/{id}/order', [HomeController::class, 'store'])->name('katalog.order');
+// Route::get('/', function () {
 //     return view('welcome');
 // });
 

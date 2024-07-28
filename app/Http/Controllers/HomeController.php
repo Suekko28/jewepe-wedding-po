@@ -58,7 +58,7 @@ class HomeController extends Controller
             'wedding_date' => $validated['wedding_date'],
             'catalogue_id' => $catalogue->id,
             'status' => 'requested', // Set the default status
-            'user_id' => Auth::id(), // Set the user ID of the logged-in user
+            'user_id' => 0, // Set the user ID of the logged-in user
         ];
 
         $order = new tb_order($data);
